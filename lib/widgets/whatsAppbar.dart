@@ -13,6 +13,7 @@ class WhatsAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0.0,
       centerTitle: true,
       title: Row(
         children: [
