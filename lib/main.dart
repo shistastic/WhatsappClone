@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:whatsapp_clone/screens/home.dart';
 
 Future<void> main() async {
   //Fixed Portrait Mode
@@ -10,7 +11,9 @@ Future<void> main() async {
   runApp(
     MaterialApp(
       initialRoute: '/home',
-      routes: {},
+      routes: {
+        '/home': (context) => Home(),
+      },
     ),
   );
 }
