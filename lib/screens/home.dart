@@ -120,38 +120,38 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            Container(
-              width: double.infinity,
-              height: double.maxFinite,
-              child: ListView(
-                children: [
-                  ChatCard(
-                    title: Text(
-                      'Saida',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black),
+            Expanded(
+              child: Container(
+                child: ListView(
+                  children: [
+                    ChatCard(
+                      title: Text(
+                        'Saida',
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black),
+                      ),
+                      message: Text(
+                        'JAJJAJAJAJA',
+                        style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.grey[500]),
+                      ),
+                      time: Text(
+                        '23:15',
+                        style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.grey[500]),
+                      ),
+                      userProfileImage: AssetImage(
+                        'assets/images/saida-whatsapp.png',
+                      ),
                     ),
-                    message: Text(
-                      'JAJJAJAJAJA',
-                      style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.grey[500]),
-                    ),
-                    time: Text(
-                      '23:15',
-                      style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.grey[500]),
-                    ),
-                    userProfileImage: AssetImage(
-                      'assets/images/saida-whatsapp.png',
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
