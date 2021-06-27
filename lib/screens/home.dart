@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/screens/camera.dart';
 import 'package:whatsapp_clone/widgets/userChatCard.dart';
 import 'package:whatsapp_clone/widgets/whatsAppbar.dart';
 
@@ -24,10 +25,14 @@ class _HomeState extends State<Home> {
         ),
         actions: [
           IconButton(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
             icon: Icon(Icons.search),
             onPressed: () {},
           ),
           IconButton(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
             icon: Icon(Icons.more_vert),
             onPressed: () {},
           ),
@@ -41,16 +46,23 @@ class _HomeState extends State<Home> {
               color: Color(0xff014f42),
               child: Row(
                 children: [
-                  Expanded(
-                    flex: 1,
-                    child: IconButton(
-                        icon: Icon(
-                          Icons.camera_alt,
-                          color: Color(0xff7fb0a9),
-                        ),
-                        onPressed: () {
-                          print('camera function');
-                        }),
+                  Padding(
+                    padding: EdgeInsets.only(right: 3),
+                    child: Expanded(
+                      flex: 1,
+                      child: IconButton(
+                          icon: Icon(
+                            Icons.camera_alt,
+                            color: Color(0xff7fb0a9),
+                          ),
+                          onPressed: () async {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (_) => Camera(),
+                              ),
+                            );
+                          }),
+                    ),
                   ),
                   Expanded(
                     flex: 3,
