@@ -10,6 +10,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int selectedMode = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,17 +57,27 @@ class _HomeState extends State<Home> {
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border(
-                            bottom: BorderSide(color: Colors.white, width: 3)),
+                            bottom: BorderSide(
+                                color: selectedMode == 1
+                                    ? Colors.white
+                                    : Color(0xff014f42),
+                                width: 3)),
                       ),
                       child: TextButton(
                           // Borde: Border(
                           //     bottom: BorderSide(color: Colors.black, width: 3)
                           // ),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              selectedMode = 1;
+                            });
+                          },
                           child: Text(
                             'CHATS',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: selectedMode == 1
+                                  ? Colors.white
+                                  : Color(0xff7fb0a9),
                               fontSize: 15,
                             ),
                           )),
@@ -73,48 +85,81 @@ class _HomeState extends State<Home> {
                   ),
                   Expanded(
                     flex: 4,
-                    child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          'ESTADOS',
-                          style: TextStyle(
-                            color: Color(0xff7fb0a9),
-                            fontSize: 15,
-                          ),
-                        )),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                            bottom: BorderSide(
+                                color: selectedMode == 2
+                                    ? Colors.white
+                                    : Color(0xff014f42),
+                                width: 3)),
+                      ),
+                      child: TextButton(
+                          onPressed: () {
+                            setState(() {
+                              selectedMode = 2;
+                            });
+                          },
+                          child: Text(
+                            'ESTADOS',
+                            style: TextStyle(
+                              color: selectedMode == 2
+                                  ? Colors.white
+                                  : Color(0xff7fb0a9),
+                              fontSize: 15,
+                            ),
+                          )),
+                    ),
                   ),
                   Expanded(
                     flex: 4,
-                    child: Row(
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            'LLAMADAS',
-                            style: TextStyle(
-                              color: Color(0xff7fb0a9),
-                              fontSize: 15,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          child: Padding(
-                            padding: EdgeInsets.only(top: 3),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                            bottom: BorderSide(
+                                color: selectedMode == 3
+                                    ? Colors.white
+                                    : Color(0xff014f42),
+                                width: 3)),
+                      ),
+                      child: Row(
+                        children: [
+                          TextButton(
+                            onPressed: () {
+                              setState(() {
+                                selectedMode = 3;
+                              });
+                            },
                             child: Text(
-                              '1',
+                              'LLAMADAS',
                               style: TextStyle(
-                                color: Color(0xff014f42),
-                                fontSize: 12,
+                                color: selectedMode == 3
+                                    ? Colors.white
+                                    : Color(0xff7fb0a9),
+                                fontSize: 15,
                               ),
-                              textAlign: TextAlign.center,
                             ),
                           ),
-                          width: 20,
-                          height: 20,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: Color(0xff7fb0a9)),
-                        )
-                      ],
+                          Container(
+                            child: Padding(
+                              padding: EdgeInsets.only(top: 3),
+                              child: Text(
+                                '1',
+                                style: TextStyle(
+                                  color: Color(0xff014f42),
+                                  fontSize: 12,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                            width: 20,
+                            height: 20,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color(0xff7fb0a9)),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
