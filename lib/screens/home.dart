@@ -64,9 +64,10 @@ class _HomeState extends State<Home> {
                                 width: 3)),
                       ),
                       child: TextButton(
-                          // Borde: Border(
-                          //     bottom: BorderSide(color: Colors.black, width: 3)
-                          // ),
+                          style: ButtonStyle(
+                            overlayColor: MaterialStateColor.resolveWith(
+                                (states) => Colors.transparent),
+                          ),
                           onPressed: () {
                             setState(() {
                               selectedMode = 1;
@@ -95,6 +96,10 @@ class _HomeState extends State<Home> {
                                 width: 3)),
                       ),
                       child: TextButton(
+                          style: ButtonStyle(
+                            overlayColor: MaterialStateColor.resolveWith(
+                                (states) => Colors.transparent),
+                          ),
                           onPressed: () {
                             setState(() {
                               selectedMode = 2;
@@ -125,6 +130,10 @@ class _HomeState extends State<Home> {
                       child: Row(
                         children: [
                           TextButton(
+                            style: ButtonStyle(
+                              overlayColor: MaterialStateColor.resolveWith(
+                                  (states) => Colors.transparent),
+                            ),
                             onPressed: () {
                               setState(() {
                                 selectedMode = 3;
