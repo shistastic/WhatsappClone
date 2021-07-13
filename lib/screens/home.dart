@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/screens/camera.dart';
 import 'package:whatsapp_clone/widgets/userChatCard.dart';
+import 'package:whatsapp_clone/widgets/userStoryCard.dart';
 import 'package:whatsapp_clone/widgets/whatsAppbar.dart';
 
 class Home extends StatefulWidget {
@@ -216,12 +217,38 @@ class _HomeState extends State<Home> {
                         'assets/images/saida-whatsapp.png',
                       ),
                     ),
+                    UserStoryCard(
+                      title: Text(
+                        'Mi estado',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black),
+                      ),
+                      message: Text(
+                        'Añade una actualización',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.grey[500]),
+                      ),
+                      userProfileImage: AssetImage(
+                        'assets/images/saida-whatsapp.png',
+                      ),
+                    ),
                   ],
                 ),
               ),
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xff28bf2b),
+        child: Icon(Icons.source),
+        onPressed: () {
+          print('floating button pressed');
+        },
       ),
     );
   }

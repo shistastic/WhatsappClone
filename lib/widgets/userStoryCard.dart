@@ -18,19 +18,38 @@ class UserStoryCard extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.fromLTRB(16, 13, 10, 10),
-            child: Container(
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 10),
-              ),
-              width: 60,
-              height: 60,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: userProfileImage,
-                    fit: BoxFit.cover,
+            child: Stack(
+              children: [
+                Container(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10),
                   ),
-                  shape: BoxShape.circle,
-                  color: Color(0xff7fb0a9)),
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: userProfileImage,
+                        fit: BoxFit.cover,
+                      ),
+                      shape: BoxShape.circle,
+                      color: Color(0xff7fb0a9)),
+                ),
+                Positioned(
+                  top: 40,
+                  left: 40,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color(0xff28bf2b),
+                        border: Border.all(width: 2, color: Colors.white)),
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                      size: 18,
+                    ),
+                  ),
+                )
+              ],
             ),
           ),
           Container(
