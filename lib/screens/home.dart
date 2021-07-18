@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/screens/camera.dart';
+import 'package:whatsapp_clone/widgets/userCallCard.dart';
 import 'package:whatsapp_clone/widgets/userChatCard.dart';
 import 'package:whatsapp_clone/widgets/userStoryCard.dart';
 import 'package:whatsapp_clone/widgets/whatsAppbar.dart';
@@ -247,7 +248,7 @@ class _HomeState extends State<Home> {
                         : selectedMode == 3
                             ? ListView(
                                 children: [
-                                  ChatCard(
+                                  CallCard(
                                     title: Text(
                                       'Saida',
                                       style: TextStyle(
@@ -255,22 +256,25 @@ class _HomeState extends State<Home> {
                                           fontWeight: FontWeight.w500,
                                           color: Colors.black),
                                     ),
-                                    message: Text(
-                                      'Ayer 15:20',
+                                    callTime: Text(
+                                      '17 de julio 15:20',
                                       style: TextStyle(
-                                          fontSize: 17,
+                                          fontSize: 16,
                                           fontWeight: FontWeight.normal,
                                           color: Colors.grey[500]),
                                     ),
-                                    time: Text(
-                                      '23:15',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.normal,
-                                          color: Colors.grey[500]),
+                                    checkIcon: Icon(
+                                      Icons.check,
+                                      color: Color(0xff014f42),
+                                      size: 20,
                                     ),
                                     userProfileImage: AssetImage(
                                       'assets/images/saida-whatsapp.png',
+                                    ),
+                                    callIcon: Icon(
+                                      Icons.call,
+                                      color: Color(0xff014f42),
+                                      size: 24,
                                     ),
                                   ),
                                 ],
