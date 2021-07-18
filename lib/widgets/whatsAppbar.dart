@@ -20,7 +20,7 @@ class WhatsAppBar extends StatelessWidget implements PreferredSizeWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 0),
             child: this.title,
-          )
+          ),
         ],
       ),
       leading: whatsIconButton,

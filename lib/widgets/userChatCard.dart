@@ -25,12 +25,13 @@ class ChatCard extends StatelessWidget {
               width: 60,
               height: 60,
               decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: userProfileImage,
-                    fit: BoxFit.cover,
-                  ),
-                  shape: BoxShape.circle,
-                  color: Color(0xff7fb0a9)),
+                image: DecorationImage(
+                  image: userProfileImage,
+                  fit: BoxFit.cover,
+                ),
+                shape: BoxShape.circle,
+                color: Color(0xff7fb0a9),
+              ),
             ),
           ),
           Container(
